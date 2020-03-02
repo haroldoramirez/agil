@@ -1,3 +1,7 @@
+# --- Sample dataset
+
+# --- !Ups
+
 insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_contabil, conta_orcamentaria, data_cadastro, data_alteracao) values ('EI01','11110','Aquisição de equipamentos e sensores para UD ITAIPU devido sua depreciação ao longo da operação da unidade, a exemplo: PT100, sensor de vazão, de pressão, de nível e outros).',1,'1203180001','202 MAQUINAS E EQUIPAMENTOS', 'now', 'now');
 insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_contabil, conta_orcamentaria, data_cadastro, data_alteracao) values ('EI02','11110','Equipamentos para sistema de refino - automação do sistema water scrubbing',1,'1203180001','202 MAQUINAS E EQUIPAMENTOS', 'now', 'now');
 insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_contabil, conta_orcamentaria, data_cadastro, data_alteracao) values ('EI03','11110','Equipamentos para sistema de refino - princípio de refino por membranas',1,'1203180001','202 MAQUINAS E EQUIPAMENTOS', 'now', 'now');
