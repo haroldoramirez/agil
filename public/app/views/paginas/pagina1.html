@@ -29,7 +29,12 @@
                         <label class="col-sm-2 control-label" for="idCentroDeCusto">Centro de Custo</label>
                         <div class="col-sm-4">
                             <!--concatenar idCentroDeCusto + NomeCC-->
-                            <select class="form-control" ng-required="true" ng-change="changeCentroDeCusto()" ng-model="trProduto.centrodecusto" id="idCentroDeCusto" ng-options="centrodecusto as centrodecusto.nome +' - '+ centrodecusto.nomeCC for centrodecusto in centrosdecustos">
+                            <select class="form-control"
+                                    ng-required="true"
+                                    ng-change="changeCentroDeCusto()"
+                                    ng-model="trProduto.centrodecusto"
+                                    id="idCentroDeCusto"
+                                    ng-options="centrodecusto as centrodecusto.nome +' - '+ centrodecusto.nomeCC for centrodecusto in centrosdecustos">
                                 <option value="">Selecione</option>
                             </select>
                         </div>
@@ -44,14 +49,23 @@
                         <label class="col-sm-2 control-label" for="idNaturezaGasto">Natureza do gasto</label>
                         <!-- puxar id da natureza + descrição da natureza-->
                         <div class="col-sm-4">
-                            <select class="form-control" ng-required="true" ng-model="trProduto.naturezagasto" id="idNaturezaGasto" ng-options="naturezagasto as naturezagasto.id +' - '+ naturezagasto .codigo for naturezagasto in naturezasdegastos">
+                            <select ng-change="changeNaturezaDeGasto()"
+                                    class="form-control"
+                                    ng-required="true"
+                                    ng-model="trProduto.naturezagasto"
+                                    id="idNaturezaGasto"
+                                    ng-options="naturezagasto as naturezagasto.id +' - '+ naturezagasto .codigo for naturezagasto in naturezasdegastos">
                                 <option value="">Selecione</option>
                             </select>
                         </div>
                         <label class="col-sm-2 control-label" for="idGastoEspecifico">Gasto Específico</label>
                         <!-- puxar Nome + Descrição -->
                         <div class="col-sm-4">
-                            <select class="form-control" ng-required="true" ng-model="trProduto.gastoespecifico" id="idGastoEspecifico" ng-options="gastoespecifico as gastoespecifico.nome +' - '+ gastoespecifico.descricao for gastoespecifico in gastosespecificos">
+                            <select class="form-control"
+                                    ng-required="true"
+                                    ng-model="trProduto.gastoespecifico"
+                                    id="idGastoEspecifico"
+                                    ng-options="gastoespecifico as gastoespecifico.nome +' - '+ gastoespecifico.descricao for gastoespecifico in gastosespecificos">
                                 <option value="">Selecione</option>
                             </select>
                         </div>
@@ -98,7 +112,7 @@
                     <div class="form-group">
                         <label class="col-md-2 control-label" >Justificativa/Objetivo</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" rows="5" placeholder="Justificativa" ng-model="trProduto.justificativa" name="justificativa" ng-required="true" ng-required="true"></textarea>
+                            <textarea class="form-control" rows="5" placeholder="Justificativa" ng-model="trProduto.justificativa" name="justificativa" ng-required="true"></textarea>
                         </div>
                     </div>
                 </fieldset>

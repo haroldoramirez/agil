@@ -28,15 +28,19 @@ public class NaturezaGastoController extends Controller {
     }
 
     public Result buscaByCentroDeCusto(Long id_centroDeCusto) {
-        try {
-            Query<NaturezaGasto> query = Ebean.createQuery(NaturezaGasto.class, "find naturezagasto where (centroDeCusto.id like :id_centroDeCusto)");
-            query.setParameter("id_centroDeCusto", "%" + id_centroDeCusto + "%");
-            List<NaturezaGasto> filtroDeNaturezasgasto = query.findList();
 
+        try {
+
+            Query<NaturezaGasto> query = Ebean.createQuery(NaturezaGasto.class, "find NaturezaGasto where centroDeCusto.id = :id_centroDeCusto");
+            query.setParameter("id_centroDeCusto", id_centroDeCusto);
+            List<NaturezaGasto> filtroDeNaturezasgasto = query.findList();
             return ok(Json.toJson(filtroDeNaturezasgasto));
+
         } catch (Exception e) {
+
             Logger.error(e.getMessage());
             return badRequest(Json.toJson(Messages.get("app.error")));
+
         }
 
     }

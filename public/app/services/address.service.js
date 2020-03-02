@@ -23,10 +23,12 @@ angular.module('agil')
     function($resource){
         return $resource('gastoespecifico/:id', {}, {
             getAll: {method: 'GET', url: 'gastosespecificos', isArray: true},
+            getNaturezaDeGastos: {method: 'GET', url: 'gastosespecificos/buscanaturezasdegastos/:id', isArray: true},
         });
     }]).service('NaturezaGasto',['$resource',
     function($resource){
         return $resource('naturezadegasto/:id', {}, {
             getAll: {method: 'GET', url: 'naturezasdegastos', isArray: true},
+            getCentroDeCustos: {method: 'GET', url: 'naturezasdegastos/buscacentrodecustos/:id', isArray: true},
         });
     }]);

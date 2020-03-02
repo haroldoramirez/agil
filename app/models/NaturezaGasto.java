@@ -74,4 +74,10 @@ public class NaturezaGasto extends Model {
     public void setDataAlteracao(Calendar dataAlteracao) {
         this.dataAlteracao = dataAlteracao;
     }
+
+    /*-------------------------------------------------------------------
+     *				 		   GETTERS AND SETTERS
+     *-------------------------------------------------------------------*/
+
+    public static Finder<Long, NaturezaGasto> find = new Finder<>(NaturezaGasto.class);
 }

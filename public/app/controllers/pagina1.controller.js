@@ -1,9 +1,8 @@
 angular.module('agil')
 //CONTROLLER DA TELA PRINCIPAL
-.controller('pagina1.controller', function ($scope, $rootScope, $state, $q, $timeout, CentroDeCusto, FontePagadora, GastoEspecifico, NaturezaGasto) {
+.controller('pagina1.controller', function ($scope, $rootScope, $state, $q, $timeout, $stateParams, CentroDeCusto, FontePagadora, GastoEspecifico, NaturezaGasto) {
 
-    //Controller responsavel por resgatar dados do banco dados e logicas de negocio do front-ent
-    console.log('pagina1 controller');
+    //Controller responsavel por resgatar dados do banco de dados e logicas de negocio do front-ent
 
     $scope.trProduto = {};
     $scope.trProduto.descricao = "Neste campo deverá ser incluído todo e qualquer tipo de informação técnica referente ao produto solicitado para compra. Considerações:\n" +
@@ -16,6 +15,7 @@ angular.module('agil')
         "- Patrimônio(No caso de substituição ou conserto).\n" +
         "\n" +
         "- Informar/Sugerir fornecedores para itens de difícil aquisição.";
+
     $scope.fontePagadora = "";
     $scope.gestorCC = "";
 
@@ -26,30 +26,41 @@ angular.module('agil')
             console.log($scope.centrosdecustos);
         });
 
-        GastoEspecifico.getAll(function(data) {
-            $scope.gastosespecificos = data;
-            //console.log($scope.gastosespecificos);
-        });
-
-        NaturezaGasto.getAll(function(data) {
-            $scope.naturezasdegastos = data;
-            //console.log($scope.naturezasdegastos);
-        });
-
     };
 
     $scope.changeCentroDeCusto = function() {
 
-        if ($scope.trProduto.centrodecusto === null) {
-            $scope.fontePagadora = ""
+        if ($scope.trProduto.centrodecusto === undefined) {
+
+            $scope.gestorCC = "";
+            $scope.fontePagadora = "";
+            $scope.trProduto.naturezagasto = {};
+
         } else {
+
             $scope.fontePagadora = $scope.trProduto.centrodecusto.fontePagadora.nome;
+            $scope.gestorCC = $scope.trProduto.centrodecusto.gestorCC;
+
+            NaturezaGasto.getCentroDeCustos({id:$scope.trProduto.centrodecusto.id}, function(data) {
+                $scope.naturezasdegastos = data;
+            });
+
         }
 
-        if ($scope.trProduto.centrodecusto === null) {
-            $scope.gestorCC = "";
+    };
+
+    $scope.changeNaturezaDeGasto = function() {
+
+        if ($scope.trProduto.naturezagasto === undefined) {
+
+            $scope.trProduto.gastosespecificos = {};
+
         } else {
-            $scope.gestorCC = $scope.trProduto.centrodecusto.gestorCC;
+
+            GastoEspecifico.getNaturezaDeGastos({id:$scope.trProduto.naturezagasto.id}, function(data) {
+                $scope.gastosespecificos = data;
+            });
+
         }
 
     };
@@ -67,8 +78,6 @@ angular.module('agil')
 
 }).controller('pagina2.controller', function ($scope, $rootScope, $state) {
 
-    console.log('pagina 2 controller');
-
     //Os valores do objeto depende da tela anterior, por isso se recarregar a pagina, ele perde o objeto preenchido, entao retorne para o inicio
     //DESCOMENTAR EM MOTO DE PRODUCAO
     if (typeof $rootScope.trProduto === "undefined") {
@@ -76,6 +85,5 @@ angular.module('agil')
         $state.go('pagina1');
     }
 
-    console.log($rootScope.trProduto);
 });
 
