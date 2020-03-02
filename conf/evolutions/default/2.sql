@@ -50,6 +50,3 @@ insert into natureza_gasto(codigo, centro_de_custo_id, data_cadastro, data_alter
 insert into natureza_gasto(codigo, centro_de_custo_id, data_cadastro, data_alteracao) values('SERV.TERCEIRO PJ',6, 'now', 'now');
 insert into natureza_gasto(codigo, centro_de_custo_id, data_cadastro, data_alteracao) values('INSTALAÇÕES',6, 'now', 'now');
 insert into natureza_gasto(codigo, centro_de_custo_id, data_cadastro, data_alteracao) values('MÓVEIS EQUIPAM-MP',6, 'now', 'now');
-
-insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_contabil, conta_orcamentaria, data_cadastro, data_alteracao) values ('ME015','11112','Mesas e cadeiras para central de bioenergia',28,'1203180003','204 MOVEIS E UTENSILIOS', 'now', 'now');
-insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_contabil, conta_orcamentaria, data_cadastro, data_alteracao) values ('ME016','11112','Moveis equipamentos outros',28,'1203180003','204 MOVEIS E UTENSILIOS', 'now', 'now');
