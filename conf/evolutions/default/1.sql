@@ -6,7 +6,6 @@
 create table centro_de_custo (
   id                            bigserial not null,
   nome                          varchar(10) not null,
-  nome2                         varchar(255),
   nome_cc                       varchar(45) not null,
   gestor_cc                     varchar(45) not null,
   fonte_pagadora_id             bigint,
