@@ -19,8 +19,6 @@ public class CentroDeCusto extends Model {
     @Column(nullable = false, length = 10)
     private String nome;
 
-    private String nome2;
-
     @Column(nullable = false, length = 45)
     private String nomeCC;
 
