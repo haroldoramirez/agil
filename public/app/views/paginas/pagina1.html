@@ -1,0 +1,154 @@
+<div ng-init="init()" class="col-md-8 col-md-offset-2">
+    <div class="card">
+        <div class="card-header text-center">
+            <h4 class="card-title">Termo de Referência</h4>
+        </div>
+        <!--Inicio card content-->
+        <div class="card-content">
+            <form class="form-horizontal" id="formularioDeRegistroId" name="formularioDeRegistro">
+                <h5 class="card-title">Dados da compra</h5>
+                <hr>
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Número GLPI </label>
+                        <div class="col-sm-4">
+                            <input ng-model="trProduto.numero" name="numero" class="form-control" type="number" placeholder="000000" autocomplete="off" ng-required="true" ng-minlength="5">
+                            <span ng-show="formularioDeRegistro.numero.$error.minlength" class="help-block">O campo <strong>Número GLPI</strong> deve ter no mínimo 5 caractéres.</span>
+                            <span ng-show="formularioDeRegistro.numero.$error.required && formularioDeRegistro.numero.$dirty" class="help-block"><star>*</star> Por favor, preencha o campo <strong>Número GLPI</strong>.</span>
+                        </div>
+                        <label class="col-sm-2 control-label" >Solicitante </label>
+                        <div class="col-sm-4">
+                            <input ng-model="trProduto.solicitante" name="solicitante" class="form-control" type="text" placeholder="Fulano de Tal" ng-required="true" ng-minlength="6">
+                            <span ng-show="formularioDeRegistro.solicitante.$error.minlength" class="help-block">O campo <strong>Solicitante</strong> deve ter no mínimo 6 letras.</span>
+                            <span ng-show="formularioDeRegistro.solicitante.$error.required && formularioDeRegistro.solicitante.$dirty" class="help-block"><star>*</star> Por favor, preencha o campo <strong>Solicitante</strong>.</span>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="idCentroDeCusto">Centro de Custo</label>
+                        <div class="col-sm-4">
+                            <!--concatenar idCentroDeCusto + NomeCC-->
+                            <select class="form-control" ng-required="true" ng-change="changeCentroDeCusto()" ng-model="trProduto.centrodecusto" id="idCentroDeCusto" ng-options="centrodecusto as centrodecusto.nome +' - '+ centrodecusto.nomeCC for centrodecusto in centrosdecustos">
+                                <option value="">Selecione</option>
+                            </select>
+                        </div>
+                        <label class="col-sm-2 control-label" for="idFontePagadora" ng-required="true">Fonte Pagadora</label>
+                        <div class="col-sm-4">
+                            <input ng-model="fontePagadora" id="idFontePagadora" class="form-control" type="text" readonly>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="gestor">Gestor do CC</label>
+                        <div class="col-sm-4">
+                            <input ng-model="gestorCC" class="form-control" id="gestor" readonly>
+                        </div>
+                        <label class="col-sm-2 control-label" for="idGastoEspecifico">Gasto Específico</label>
+                        <!-- puxar Nome + Descrição -->
+                        <div class="col-sm-4">
+                            <select class="form-control" ng-required="true" ng-model="trProduto.gastoespecifico" id="idGastoEspecifico" ng-options="gastoespecifico as gastoespecifico.nome +' - '+ gastoespecifico.descricao for gastoespecifico in gastosespecificos">
+                                <option value="">Selecione</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="idNaturezaGasto">Natureza do gasto</label>
+                        <!-- puxar id da natureza + descrição da natureza-->
+                        <div class="col-sm-4">
+                            <select class="form-control" ng-required="true" ng-model="trProduto.naturezagasto" id="idNaturezaGasto" ng-options="naturezagasto as naturezagasto.id +' - '+ naturezagasto .codigo for naturezagasto in naturezasdegastos">
+                                <option value="">Selecione</option>
+                            </select>
+                        </div>
+                        <label class="col-sm-2 control-label">Diretor da área </label>
+                        <div class="col-sm-4">
+                            <input class="form-control" ng-model="trProduto.diretorDaArea" type="text" name="diretorDaArea" ng-minlength="6" ng-required="true">
+                            <span ng-show="formularioDeRegistro.diretorDaArea.$error.minlength" class="help-block">O campo <strong>Diretor</strong> deve ter no mínimo 6 letras.</span>
+                            <span ng-show="formularioDeRegistro.diretorDaArea.$error.required && formularioDeRegistro.diretorDaArea.$dirty" class="help-block"><star>*</star> Por favor, preencha o campo <strong>Diretor da área</strong>.</span>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" >Etapa/Meta/Submeta</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" name="etapaMetaSubmeta" ng-model="trProduto.etapaMetaSubmeta" placeholder="Etapa 1 da meta 2 e submeta 2.4" ng-minlength="3">
+                            <span ng-show="true" class="help-block"><star>*</star> O campo <strong>Etapa</strong> deve ser preenchido com "N/A" caso seja vazio</span>
+                        </div>
+                    </div>
+                </fieldset>
+                <h5 class="card-title">Dados do produto</h5>
+                <hr>
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" >Descrição do produto</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="descricao_produto" rows="20" ng-model="trProduto.descricao" ng-required="true">
+                            <span ng-show="true" class="help-block"><star>*</star> O texto pré escrito é somente para auxílio, favor apagá-lo após preencher o campo.</span>
+
+                            </textarea>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" >Justificativa/Objetivo</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" rows="5" placeholder="Justificativa" ng-model="trProduto.justificativa" name="justificativa" ng-required="true" ng-required="true"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" >Justificativa de compra/contratação direta</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" rows="10" placeholder="Justificativa de compra direta" ng-model="trProduto.justificativaDireta"></textarea>
+                            <span ng-show="true" class="help-block"><star>*</star> O campo deve ser preenchido com "N/A" caso seja vazio</span>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div class="form-group" >
+                        <label class="col-sm-2 control-label">Quantidade </label>
+                        <div class="col-sm-4">
+                            <input class="form-control" type="number" placeholder="0" ng-model="trProduto.quantidade" ng-required="true">
+                        </div>
+
+                        <label class="col-md-2 control-label">Valor estimado total</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" type="number" placeholder="R$" ng-model="trProduto.valorEstimado" ng-required="true">
+                        </div>
+
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Local de entrega</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" name="local_entrega" placeholder="Exemplo: Sala 105" ng-model="trProduto.localEntrega" ng-required="true">
+                            <span ng-show="true" class="help-block"><star>*</star> Fornecer endereço completo</span>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <!--Fim card content-->
+        <div class="card-footer">
+            <div class="card-footer">
+                <button ng-disabled="formularioDeRegistro.$invalid" ng-click="pagina2()" type="button" class="btn btn-lg btn-success btn-fill pull-right">
+                        <span class="btn-label">
+                            <i class="ti-check"></i>
+                        </span>
+                    Confirmar cadastro
+                </button>
+                <div class="form-group pull-left">
+                    <div ng-show="formularioDeRegistro.$invalid" class="category"><star>*</star> Todos os campos devem ser preenchidos</div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>

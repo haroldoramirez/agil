@@ -1,0 +1,9 @@
+/target
+target
+.idea
+.sbtserver
+project/project
+project/target
+/logs
+logs
+deploy

@@ -1,0 +1,17 @@
+/*Estilizacao personalizada para a aplicacao*/
+table
+{
+    width: 1000px;
+    font: 17px Calibri;
+    text-align: left;
+}
+table, th, td
+{
+    border: solid 2px #DDD;
+    border-collapse: collapse;
+    padding: 2px 3px;
+    text-align: left;
+}
+th#externo{
+    border: solid 2px;
+}

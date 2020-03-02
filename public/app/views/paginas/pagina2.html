@@ -1,0 +1,98 @@
+<div class="col-md-8 col-md-offset-2">
+    <div class="card">
+        <div class="card-header text-center">
+            <h4 class="card-title">Termo de Referência</h4>
+        </div>
+        <div class="card-content">
+            <div id="tabela">
+                <table>
+                    <tr>
+                        <th id="externo">
+                            <table>
+                                Dados da Compra
+                                <tr>
+                                    <td>Número Chamado: <b>{{trProduto.numero}}</b></td>
+                                    <td>Solicitante: <b>{{trProduto.solicitante}}</b></td>
+                                </tr>
+                                <tr>
+                                    <!-- puxar id + nome do cc -->
+                                    <td>Centro de custo: <b>{{trProduto.centrodecusto.nome}} - {{trProduto.centrodecusto.nomeCC}}</b></td>
+                                    <td>Fonte Pagadora:<b>{{trProduto.centrodecusto.fontePagadora.nome}}</b></td>
+
+                                </tr>
+                                <tr>
+                                    <!-- descrição na tabela fonte pagadora-->
+                                    <td>Convênio/Cliente: <b>{{trProduto.centrodecusto.fontePagadora.descricao}}</b></td>
+                                    <td>Etapa/Meta/Submeta:<b>{{trProduto.etapaMetaSubmeta}}</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Natureza do Gasto: <b>{{trProduto.naturezagasto.codigo}}</b></td>
+                                    <td>Gasto específico: <b>{{trProduto.gastoespecifico.nome}} - {{trProduto.gastoespecifico.descricao}}</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Conta contábil: <b>{{trProduto.gastoespecifico.contaContabil}}</b></td>
+                                    <td>Conta orçamentária: <b>{{trProduto.gastoespecifico.contaOrcamentaria}}</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Número da SC*:</td>
+                                    <td>Número do PC*: </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Modalidade da Contratação*:</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><b>Condição de pagamento: 30 dias após o atesto recebimento do fiscal técnico na nota fiscal e/ou conforme acordado em instrumento jurídico</b></td>
+                                </tr>
+                            </table><bR>
+                            <div style="text-align: left">
+                                Dados do Produto
+                            </div>
+                            <table>
+                                <tr>
+                                    <td colspan="2">Descrição do produto:<br><p>{{trProduto.descricao}}</p></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Justificativa/Objetivo:<br><p>{{trProduto.justificativa}}</p></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Justificativa de contratação direta:<br><p>{{trProduto.justificativaDireta}}</p></td>
+                                </tr>
+                                <tr>
+                                    <td>Quantidadade: <b>{{trProduto.quantidade}}</b></td>
+                                    <td>Valor estimado: <b>{{trProduto.valorEstimado}}</b></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Local de entrega: <b>{{trProduto.localEntrega}}</b></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><h5><b>Garantia do produto e assistência técnica*:</b></h5> </td>
+                                </tr>
+                            </table>
+                            <div style="text-align: center">
+                                <br><br><br>
+                                <hr size="1" width="50%"></hr>
+                                <b>{{trProduto.solicitante}}</b>
+                                <br>
+                                <b>Requerente</b>
+                                <br>
+                                <hr size="1" width="50%"></hr>
+                                <b>{{trProduto.centrodecusto.gestorCC}}</b>
+                                <br>
+                                <b>Gestor CC</b>
+                                <br>
+                                <hr size="1" width="50%"></hr>
+                                <b>{{trProduto.diretorDaArea}}</b>
+                                <br>
+                                <b>Diretor da área</b>
+                            </div>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="card-footer">
+            <input class="btn btn-success btn-fill btn-wd btn-next pull-right" type="button" value="Criar PDF" id="btnImprimir" onclick="CriaPDF()"/>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
