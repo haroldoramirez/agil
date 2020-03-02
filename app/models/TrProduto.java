@@ -25,8 +25,6 @@ public class TrProduto extends Model {
     @Column(nullable = false, length = 150)
     private String diretorCC;
 
-    private String diretorCC2;
-
     @Column(nullable = false, length = 400)
     private String descricao;
 

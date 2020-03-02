@@ -2,7 +2,6 @@
     <div class="card">
         <div class="card-header text-center">
             <h4 class="card-title">Termo de Referência</h4>
-           <!-- <h4 class="card-title">Termo de Referência</h4>-->
         </div>
         <!--Inicio card content-->
         <div class="card-content">
@@ -42,9 +41,12 @@
                 </fieldset>
                 <fieldset>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label" for="gestor">Gestor do CC</label>
+                        <label class="col-sm-2 control-label" for="idNaturezaGasto">Natureza do gasto</label>
+                        <!-- puxar id da natureza + descrição da natureza-->
                         <div class="col-sm-4">
-                            <input ng-model="gestorCC" class="form-control" id="gestor" readonly>
+                            <select class="form-control" ng-required="true" ng-model="trProduto.naturezagasto" id="idNaturezaGasto" ng-options="naturezagasto as naturezagasto.id +' - '+ naturezagasto .codigo for naturezagasto in naturezasdegastos">
+                                <option value="">Selecione</option>
+                            </select>
                         </div>
                         <label class="col-sm-2 control-label" for="idGastoEspecifico">Gasto Específico</label>
                         <!-- puxar Nome + Descrição -->
@@ -57,13 +59,11 @@
                 </fieldset>
                 <fieldset>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label" for="idNaturezaGasto">Natureza do gasto</label>
-                        <!-- puxar id da natureza + descrição da natureza-->
+                        <label class="col-sm-2 control-label" for="gestor">Gestor do CC</label>
                         <div class="col-sm-4">
-                            <select class="form-control" ng-required="true" ng-model="trProduto.naturezagasto" id="idNaturezaGasto" ng-options="naturezagasto as naturezagasto.id +' - '+ naturezagasto .codigo for naturezagasto in naturezasdegastos">
-                                <option value="">Selecione</option>
-                            </select>
+                            <input ng-model="gestorCC" class="form-control" id="gestor" readonly>
                         </div>
+
                         <label class="col-sm-2 control-label">Diretor da área </label>
                         <div class="col-sm-4">
                             <input class="form-control" ng-model="trProduto.diretorDaArea" type="text" name="diretorDaArea" ng-minlength="6" ng-required="true">
