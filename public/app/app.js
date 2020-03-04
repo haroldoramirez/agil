@@ -101,10 +101,12 @@ angular
         });
       })
       // Cache-busting strategy
+      // Logica responsavel para que cada deploy da aplicacao seja com o codigo atualizado, sem precisar resetar caches de navegadores
       .config(['$httpProvider', function($httpProvider) {
 
         //var __version_number = 6.0; // cacheBustSuffix = Date.now('U'); // 'U' -> linux/unix epoch date int
-        var __version_number = Date.now('U'); // cacheBustSuffix = Date.now('U'); // 'U' -> linux/unix epoch date int
+          //a versao number precisa ser diferente para funcionar o cache-busting
+        var __version_number = Date.now('U').getSeconds(); // cacheBustSuffix = Date.now('U'); // 'U' -> linux/unix epoch date int
 
           $httpProvider.interceptors.push(function () {
             return {
