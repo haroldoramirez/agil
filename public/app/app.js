@@ -106,7 +106,7 @@ angular
 
         //var __version_number = 6.0; // cacheBustSuffix = Date.now('U'); // 'U' -> linux/unix epoch date int
           //a versao number precisa ser diferente para funcionar o cache-busting
-        var __version_number = Date.now('U').getSeconds(); // cacheBustSuffix = Date.now('U'); // 'U' -> linux/unix epoch date int
+        var __version_number = Date.now('U'); // cacheBustSuffix = Date.now('U'); // 'U' -> linux/unix epoch date int
 
           $httpProvider.interceptors.push(function () {
             return {
