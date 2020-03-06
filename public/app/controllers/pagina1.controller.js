@@ -4,29 +4,34 @@ angular.module('agil')
 
     //Controller responsavel por resgatar dados do banco de dados e logicas de negocio do front-ent
 
-    $scope.trProduto = {};
-    $scope.trProduto.descricao = "Neste campo deverá ser incluído todo e qualquer tipo de informação técnica referente ao produto solicitado para compra. Considerações:\n" +
-        "\n" +
-        "- Informar nome técnico e/ou comercial entre parênteses para facilitar buscas no mercado.\n" +
-        "\n" +
-        "- Possíveis aplicações.\n" +
-        "Exemplo: Aquisição de Válvula (Esta peça será usada para fazer a ligação da tubulação XXX sendo necessária para XXXX)\n" +
-        "\n" +
-        "- Patrimônio(No caso de substituição ou conserto).\n" +
-        "\n" +
-        "- Informar/Sugerir fornecedores para itens de difícil aquisição.";
+    if (typeof $rootScope.trProduto === "undefined") {
+        $scope.trProduto = {};
+        $scope.trProduto.descricao = "Neste campo deverá ser incluído todo e qualquer tipo de informação técnica referente ao produto solicitado para compra. Considerações:\n" +
+            "\n" +
+            "- Informar nome técnico e/ou comercial entre parênteses para facilitar buscas no mercado.\n" +
+            "\n" +
+            "- Possíveis aplicações.\n" +
+            "Exemplo: Aquisição de Válvula (Esta peça será usada para fazer a ligação da tubulação XXX sendo necessária para XXXX)\n" +
+            "\n" +
+            "- Patrimônio(No caso de substituição ou conserto).\n" +
+            "\n" +
+            "- Informar/Sugerir fornecedores para itens de difícil aquisição.";
 
-    $scope.fontePagadora = "";
-    $scope.gestorCC = "";
+        $scope.fontePagadora = "";
+        $scope.gestorCC = "";
 
-    $scope.init = function() {
+        $scope.init = function() {
 
-        CentroDeCusto.getAll(function(data) {
-            $scope.centrosdecustos = data;
-            console.log($scope.centrosdecustos);
-        });
+            CentroDeCusto.getAll(function(data) {
+                $scope.centrosdecustos = data;
+            });
 
-    };
+        };
+    } else {
+
+        $scope.fontePagadora = $rootScope.trProduto.centrodecusto.fontePagadora.nome;
+        $scope.gestorCC = $rootScope.trProduto.centrodecusto.gestorCC;
+    }
 
     $scope.changeCentroDeCusto = function() {
 
@@ -78,9 +83,16 @@ angular.module('agil')
 
 }).controller('pagina2.controller', function ($scope, $rootScope, $state) {
 
+    console.log($rootScope.trProduto);
+
     //Os valores do objeto depende da tela anterior, por isso se recarregar a pagina, ele perde o objeto preenchido, entao retorne para o inicio
     //DESCOMENTAR EM MOTO DE PRODUCAO
     if (typeof $rootScope.trProduto === "undefined") {
+        //retorna para a pagina1
+        $state.go('pagina1');
+    }
+
+    $scope.voltar = function() {
         //retorna para a pagina1
         $state.go('pagina1');
     }

@@ -15,3 +15,9 @@ table, th, td
 th#externo{
     border: solid 2px;
 }
+
+.card .card-content .card-title {
+    color:coral;
+    text-align:center;
+    font-size: 150%;
+}

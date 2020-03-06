@@ -46,6 +46,12 @@ public class TrProduto extends Model {
     @Column(nullable = false, length = 400)
     private String localEntrega;
 
+    @Column(nullable = false, length = 20)
+    private String tipoCompra;
+
+    @Column(nullable = false)
+    private Integer patrimonio;
+
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Calendar dataCadastro;
@@ -159,5 +165,21 @@ public class TrProduto extends Model {
 
     public void setDataAlteracao(Calendar dataAlteracao) {
         this.dataAlteracao = dataAlteracao;
+    }
+
+    public String getTipoCompra() {
+        return tipoCompra;
+    }
+
+    public void setTipoCompra(String tipoCompra) {
+        this.tipoCompra = tipoCompra;
+    }
+
+    public Integer getPatrimonio() {
+        return patrimonio;
+    }
+
+    public void setPatrimonio(Integer patrimonio) {
+        this.patrimonio = patrimonio;
     }
 }

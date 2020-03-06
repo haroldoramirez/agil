@@ -82,6 +82,8 @@ create table tr_produto (
   gasto_especifico_id           bigint,
   natureza_gasto_id             bigint,
   local_entrega                 varchar(400) not null,
+  tipo_compra                   varchar(20) not null,
+  patrimonio                    integer not null,
   data_cadastro                 timestamp not null,
   data_alteracao                timestamp,
   constraint pk_tr_produto primary key (id)

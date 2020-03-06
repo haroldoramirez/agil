@@ -1,12 +1,12 @@
 <div ng-init="init()" class="col-md-8 col-md-offset-2">
     <div class="card">
         <div class="card-header text-center">
-            <h4 class="card-title">Termo de Referência</h4>
+            <h4 class="card-title">Termo de Referência para aquisição de produtos</h4>
         </div>
         <!--Inicio card content-->
         <div class="card-content">
             <form class="form-horizontal" id="formularioDeRegistroId" name="formularioDeRegistro">
-                <h5 class="card-title">Dados da compra</h5>
+                <h5 class="card-title cabecalho">Dados da compra</h5>
                 <hr>
                 <fieldset>
                     <div class="form-group">
@@ -95,15 +95,50 @@
                         </div>
                     </div>
                 </fieldset>
-                <h5 class="card-title">Dados do produto</h5>
+                <h5 class="card-title" id="cabecalho-dados-produto">Dados do produto</h5>
                 <hr>
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Patrimônio </label>
+                        <div class="col-sm-4">
+                            <input class="form-control" id="patrimonio" ng-model="trProduto.patrimonio" type="number" placeholder="Insira o patrimônio" ng-minlength="3">
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <div class="radio radio-inline">
+                                    <input type="radio" name="radioConserto" id="radioConserto" ng-model="trProduto.tipocompra" value="Conserto">
+                                    <label for="radioConserto">
+                                        Conserto
+                                    </label>
+                                </div>
+                                <div class="radio radio-inline">
+                                    <input type="radio" name="radioSubstituicao" id="radioSubstituicao" ng-model="trProduto.tipocompra" value="Substituição">
+                                    <label for="radioSubstituicao">
+                                        Substituição
+                                    </label>
+                                </div>
+                                <div class="radio radio-inline">
+                                    <input type="radio" name="radioMelhoria" id="radioMelhoria" ng-model="trProduto.tipocompra" value="Melhoria">
+                                    <label for="radioMelhoria">
+                                        Melhoria
+                                    </label>
+                                </div>
+                                <div class="radio radio-inline">
+                                    <input type="radio" name="radioNA" id="radioNA" ng-model="trProduto.tipocompra" value="N/A">
+                                    <label for="radioNA">
+                                        N/A
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
                 <fieldset>
                     <div class="form-group">
                         <label class="col-md-2 control-label" >Descrição do produto</label>
                         <div class="col-md-10">
                             <textarea class="form-control" name="descricao_produto" rows="20" ng-model="trProduto.descricao" ng-required="true">
-                            <span ng-show="true" class="help-block"><star>*</star> O texto pré escrito é somente para auxílio, favor apagá-lo após preencher o campo.</span>
-
+                                <span ng-show="true" class="help-block"><star>*</star> O texto pré escrito é somente para auxílio, favor apagá-lo após preencher o campo.</span>
                             </textarea>
                         </div>
                     </div>
@@ -127,7 +162,7 @@
                 </fieldset>
                 <fieldset>
                     <div class="form-group" >
-                        <label class="col-sm-2 control-label">Quantidade </label>
+                        <label class="col-sm-2 control-label">Quantidade (Com unidade de medida)</label>
                         <div class="col-sm-4">
                             <input class="form-control" type="number" placeholder="0" ng-model="trProduto.quantidade" ng-required="true">
                         </div>
