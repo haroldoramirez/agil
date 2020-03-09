@@ -1,23 +1,41 @@
 /*Estilizacao personalizada para a aplicacao*/
 table
 {
-    width: 1000px;
     font: 17px Calibri;
     text-align: left;
 }
 table, th, td
 {
     border: solid 2px #DDD;
-    border-collapse: collapse;
     padding: 2px 3px;
     text-align: left;
 }
 th#externo{
     border: solid 2px;
 }
+label#form {
+    text-align:left;
+}
 
-.card .card-content .card-title {
+h5#cabecalho{
     color:coral;
     text-align:center;
     font-size: 150%;
+}
+
+fieldset#radio {
+    overflow: hidden
+}
+
+label {
+    float: left;
+    clear: none;
+    display: block;
+    padding: 0px 1em 0px 8px;
+}
+
+.form-horizontal .checkbox, .form-horizontal .checkbox-inline, .form-horizontal .radio, .form-horizontal .radio-inline {
+    padding-top: 7px;
+    margin-top: -3px;
+    margin-bottom: 15px;
 }

@@ -6,7 +6,8 @@ angular
              'ngAnimate',
              'ncy-angular-breadcrumb',
              'ui.utils.masks',
-             'toastr'
+             'toastr',
+             'ngDialog'
             ]
         )
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -52,6 +53,15 @@ angular
             template: '<a class="navbar-brand" ng-repeat="step in steps">{{step.ncyBreadcrumbLabel}}</a>'
         });
     })
+    //Config do dialog do sistema
+    .config(['ngDialogProvider', function (ngDialogProvider) {
+        ngDialogProvider.setDefaults({
+            className: 'ngdialog-theme-default',
+            showClose: true,
+            closeByDocument: true,
+            closeByEscape: true
+        })
+    }])
     /*Configuracao de loading*/
     .config(function($provide) {
         $provide.decorator('$q', ['$delegate', '$rootScope', function($delegate, $rootScope) {
@@ -99,31 +109,4 @@ angular
           titleClass: 'toast-title',
           toastClass: 'toast'
         });
-      })
-      // Cache-busting strategy
-      // Logica responsavel para que cada deploy da aplicacao seja com o codigo atualizado, sem precisar resetar caches de navegadores
-      .config(['$httpProvider', function($httpProvider) {
-
-        //var __version_number = 6.0; // cacheBustSuffix = Date.now('U'); // 'U' -> linux/unix epoch date int
-          //a versao number precisa ser diferente para funcionar o cache-busting
-        var __version_number = Date.now('U'); // cacheBustSuffix = Date.now('U'); // 'U' -> linux/unix epoch date int
-
-          $httpProvider.interceptors.push(function () {
-            return {
-              'request': function (config) {
-                // !!config.cached represents if the request is resolved using
-                // the angular-templatecache
-                if (!config.cached) {
-                  config.url += ((config.url.indexOf('?')>-1)?'&':'?') + config.paramSerializer({v: __version_number});
-                } else if (config.url.indexOf('no-cache') > -1) {
-                  // if the cached URL contains 'no-cache' then remove it from the cache
-                  config.cache.remove(config.url);
-                  config.cached = false; // unknown consequences
-                  // Warning: if you remove the value form the cache, and the asset is not
-                  // accessable at the given URL, you will get a 404 error.
-                }
-                return config;
-              }
-            }
-          });
-        }]);
+      });

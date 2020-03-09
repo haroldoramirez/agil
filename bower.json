@@ -16,7 +16,8 @@
     "angular-input-masks": "^2.6.0",
     "moment": "^2.24.0",
     "SpinKit": "spinkit#^2.0.1",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "ng-dialog": "^1.4.0"
   },
   "appPath": "app"
 }
