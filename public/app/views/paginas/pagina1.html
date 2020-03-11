@@ -6,16 +6,16 @@
         <!--Inicio card content-->
         <div class="card-content">
             <form class="form-horizontal" id="formularioDeRegistroId" name="formularioDeRegistro">
-                <h5 class="card-title" id="cabecalho">Dados da compra</h5> <hr>
+                <h5 class="card-title cabecalho">Dados da compra</h5> <hr>
                 <fieldset>
                     <div class="form-group">
-                        <div class="col-sm-2 control-label"> <label id="form">Número GLPI </label> </div>
+                        <div class="col-sm-2 control-label"><label class="rotulo">Número GLPI </label></div>
                         <div class="col-sm-4">
                             <input ng-model="trProduto.numero" name="numero" class="form-control" type="number" placeholder="000000" autocomplete="off" ng-required="true" ng-minlength="5">
                             <span ng-show="formularioDeRegistro.numero.$error.minlength" class="help-block">O campo <strong>Número GLPI</strong> deve ter no mínimo 5 caractéres.</span>
                             <span ng-show="formularioDeRegistro.numero.$error.required && formularioDeRegistro.numero.$dirty" class="help-block"><star>*</star> Por favor, preencha o campo <strong>Número GLPI</strong>.</span>
                         </div>
-                        <div class="col-sm-2 control-label"><label id="form"">Solicitante </label></div>
+                        <div class="col-sm-2 control-label"><label class="rotulo">Solicitante </label></div>
                         <div class="col-sm-4">
                             <input ng-model="trProduto.solicitante" name="solicitante" class="form-control" type="text" placeholder="Nome completo" ng-required="true" ng-minlength="6">
                             <span ng-show="formularioDeRegistro.solicitante.$error.minlength" class="help-block">O campo <strong>Solicitante</strong> deve ter no mínimo 6 letras.</span>
@@ -26,7 +26,7 @@
 
                 <fieldset>
                     <div class="form-group">
-                        <div class="col-sm-2 control-label"> <label id="form">Centro de Custo</label></div>
+                        <div class="col-sm-2 control-label"><label class="rotulo">Centro de Custo</label></div>
                         <div class="col-sm-4">
                             <!--concatenar idCentroDeCusto + NomeCC-->
                             <select class="form-control"
@@ -38,7 +38,7 @@
                                 <option value="">Selecione</option>
                             </select>
                         </div>
-                        <div class="col-sm-2 control-label"><label for="idFontePagadora" id="form">Fonte Pagadora</label> </div>
+                        <div class="col-sm-2 control-label"><label class="rotulo">Fonte Pagadora</label> </div>
                         <div class="col-sm-4">
                             <input ng-model="fontePagadora" id="idFontePagadora" class="form-control" type="text" readonly>
                         </div>
@@ -47,7 +47,7 @@
 
                 <fieldset>
                     <div class="form-group">
-                        <div class="col-sm-2 control-label"><label id="form">Natureza do gasto</label></div>
+                        <div class="col-sm-2 control-label"><label class="rotulo">Natureza do gasto</label></div>
                         <!-- puxar descrição da natureza-->
                         <div class="col-sm-4">
                             <select ng-disabled="!trProduto.centrodecusto" ng-change="changeNaturezaDeGasto()"
@@ -59,7 +59,7 @@
                                 <option value="">Selecione</option>
                             </select>
                         </div>
-                        <div class="col-sm-2 control-label"> <label id="form">Gasto Específico</label> </div>
+                        <div class="col-sm-2 control-label"><label class="rotulo">Gasto Específico</label> </div>
                         <!-- puxar Nome + Descrição -->
                         <div class="col-sm-4">
                             <select ng-disabled="!trProduto.naturezagasto" class="form-control"
@@ -75,12 +75,12 @@
 
                 <fieldset>
                     <div class="form-group">
-                        <div class="col-sm-2 control-label"> <label id="form">Gestor do CC</label> </div>
+                        <div class="col-sm-2 control-label"><label class="rotulo">Gestor do CC</label> </div>
                         <div class="col-sm-4">
                             <input ng-model="gestorCC" class="form-control" id="gestor" readonly>
                         </div>
 
-                        <div class="col-sm-2 control-label"> <label id="form">Diretor da área </label> </div>
+                        <div class="col-sm-2 control-label"> <label class="rotulo">Diretor da área </label> </div>
                         <div class="col-sm-4">
                             <input class="form-control" ng-model="trProduto.diretorDaArea" type="text" name="diretorDaArea" ng-minlength="6" ng-required="true" placeholder="Nome completo">
                             <span ng-show="formularioDeRegistro.diretorDaArea.$error.minlength" class="help-block">O campo <strong>Diretor</strong> deve ter no mínimo 6 letras.</span>
@@ -91,7 +91,7 @@
 
                 <fieldset>
                     <div class="form-group">
-                        <div class="col-sm-2 control-label"> <label id="form">Etapa/ Meta/ Submeta</label> </div>
+                        <div class="col-sm-2 control-label"><label class="rotulo">Etapa/Meta/Submeta</label></div>
                         <div class="col-sm-10">
                             <input class="form-control" name="etapaMetaSubmeta" ng-model="trProduto.etapaMetaSubmeta" placeholder="Etapa 1 da meta 2 e submeta 2.4" ng-minlength="3">
                             <span ng-show="true" class="help-block"><star>*</star> O campo <strong>Etapa</strong> deve ser preenchido com "N/A" caso seja vazio</span>
@@ -99,16 +99,16 @@
                     </div>
                 </fieldset>
 
-                <hr> <h5 class="card-title" id="cabecalho">Dados do produto</h5> <hr>
+                <hr> <h5 class="card-title cabecalho">Dados do produto</h5> <hr>
 
                 <fieldset>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Patrimônio </label>
+                        <div class="col-sm-2 control-label"><label class="rotulo">Patrimônio</label></div>
                         <div class="col-sm-4">
                             <input class="form-control" id="patrimonio" ng-model="trProduto.patrimonio" type="text" placeholder="Insira o patrimônio" ng-minlength="3">
                         </div>
                         <div class="col-sm-6">
-                            <div class="btn-group" role="group" aria-label="Basic example">
+                            <div class="btn-group" role="group">
                                 <div class="radio radio-inline">
                                     <input type="radio" name="radioConserto" id="radioConserto" ng-model="trProduto.tipocompra" value="Conserto">
                                     <label for="radioConserto">
@@ -138,7 +138,7 @@
                     </div>
                 </fieldset>
                     <div class="form-group">
-                        <div class="col-md-2 control-label"> <label id="form">Descrição do produto</label> </div>
+                        <div class="col-md-2 control-label"><label class="rotulo-textarea">Descrição do produto/Quantidade e Unidade de medida</label> </div>
                         <div class="col-md-10">
                             <textarea class="form-control" name="descricao_produto" rows="20" ng-model="trProduto.descricao" ng-required="true">
                             </textarea>
@@ -150,7 +150,7 @@
                 <fieldset>
                     <div class="form-group">
                         <div>
-                            <div class="col-md-2 control-label"> <label id="form">Justificativa/ Objetivo</label> </div>
+                            <div class="col-md-2 control-label"><label class="rotulo">Justificativa/Objetivo</label> </div>
                         </div>
                         <div class="col-md-10">
                             <textarea class="form-control" rows="5" placeholder="Justificativa" ng-model="trProduto.justificativa" name="justificativa" ng-required="true"></textarea>
@@ -160,7 +160,7 @@
 
                 <fieldset>
                     <div class="form-group">
-                        <div class="col-md-2 control-label"> <label id="form">Justificativa de compra/ contratação direta</label> </div>
+                        <div class="col-md-2 control-label"><label class="rotulo-textarea">Justificativa de compra/Contratação direta</label> </div>
                         <div class="col-md-10">
                             <textarea class="form-control" rows="10" placeholder="Justificativa de compra direta" ng-model="trProduto.justificativaDireta"></textarea>
                             <span ng-show="true" class="help-block"><star>*</star> O campo deve ser preenchido com "N/A" caso seja vazio</span>
@@ -169,21 +169,19 @@
                 </fieldset>
                 <fieldset>
                     <div class="form-group" >
-                        <div class="col-md-2 control-label"> <label id="form">Quantidade (Com unidade de medida) </label> </div>
+                        <div class="col-md-2 control-label"> <label class="rotulo">Quantidade total</label> </div>
                         <div class="col-sm-4">
-                            <input class="form-control" type="text" placeholder="0" ng-model="trProduto.quantidade" ng-required="true">
+                            <input class="form-control" type="number" placeholder="0" ng-model="trProduto.quantidade" ng-required="true">
                         </div>
-
-                        <div class="col-md-2 control-label"> <label>Valor estimado total</label> </div>
+                        <div class="col-md-2 control-label"><label class="rotulo">Valor estimado total</label> </div>
                         <div class="col-sm-4">
                             <input class="form-control" type="number" placeholder="R$" ng-model="trProduto.valorEstimado" ng-required="true">
                         </div>
-
                     </div>
                 </fieldset>
                 <fieldset>
                     <div class="form-group">
-                        <div class="col-md-2 control-label"> <label id="form">Local de entrega</label> </div>
+                        <div class="col-md-2 control-label"><label class="rotulo">Local de entrega</label> </div>
                         <div class="col-sm-10">
                             <input class="form-control" name="local_entrega" placeholder="Exemplo: Sala 105" ng-model="trProduto.localEntrega" ng-required="true">
                             <span ng-show="true" class="help-block"><star>*</star> Fornecer endereço completo</span>
@@ -207,70 +205,83 @@
 </div>
 
 <script type="text/ng-template" id="confirmarDialogo">
-    <div class="row">
-        <div class="col-md-12">
-            <h5 class="card-title text-center">Dados da compra</h5><hr>
-        </div>
+    <table>
+        <h4>Dados da Compra</h4>
+        <tr>
+            <td>Número Chamado: <b>{{trProduto.numero}}</b></td>
+            <td>Solicitante: <b>{{trProduto.solicitante}}</b></td>
+        </tr>
+        <tr>
+            <!-- puxar id + nome do cc -->
+            <td>Centro de custo: <b>{{trProduto.centrodecusto.nome}} - {{trProduto.centrodecusto.nomeCC}}</b></td>
+            <td>Fonte Pagadora:<b>{{trProduto.centrodecusto.fontePagadora.nome}}</b></td>
+
+        </tr>
+        <tr>
+            <!-- descrição na tabela fonte pagadora-->
+            <td>Convênio/Cliente: <b>{{trProduto.centrodecusto.fontePagadora.descricao}}</b></td>
+            <td>Etapa/Meta/Submeta:<b>{{trProduto.etapaMetaSubmeta}}</b></td>
+        </tr>
+        <tr>
+            <td>Natureza do Gasto: <b>{{trProduto.naturezagasto.codigo}}</b></td>
+            <td>Gasto específico: <b>{{trProduto.gastoespecifico.nome}} - {{trProduto.gastoespecifico.descricao}}</b></td>
+        </tr>
+        <tr>
+            <td>Conta contábil: <b>{{trProduto.gastoespecifico.contaContabil}}</b></td>
+            <td>Conta orçamentária: <b>{{trProduto.gastoespecifico.contaOrcamentaria}}</b></td>
+        </tr>
+        <tr>
+            <td>Número da SC*:</td>
+            <td>Número do PC*: </td>
+        </tr>
+        <tr>
+            <td>Modalidade da Contratação*:</td>
+            <td>Número do processo*:</td>
+        </tr>
+        <tr>
+            <td colspan="2"><b>Condição de pagamento: 30 dias após o atesto recebimento do fiscal técnico na nota fiscal e/ou conforme acordado em instrumento jurídico</b></td>
+        </tr>
+    </table><bR>
+    <h4>Dados do Produto</h4>
+    <table style="width:100%;">
+        <tr>
+            <td>Patrimônio: <b>{{trProduto.patrimonio}}</b></td>
+            <td>Tipo: <b>{{trProduto.tipocompra}}</b></td>
+        </tr>
+        <tr>
+            <td colspan="2">Descrição do produto:<br><p>{{trProduto.descricao}}</p></td>
+        </tr>
+        <tr>
+            <td colspan="2">Justificativa/Objetivo:<br><p>{{trProduto.justificativa}}</p></td>
+        </tr>
+        <tr>
+            <td colspan="2">Justificativa de contratação direta:<br><p>{{trProduto.justificativaDireta}}</p></td>
+        </tr>
+        <tr>
+            <td>Quantidadade: <b>{{trProduto.quantidade}}</b></td>
+            <td>Valor estimado: <b>{{trProduto.valorEstimado}}</b></td>
+        </tr>
+        <tr>
+            <td colspan="2">Local de entrega: <b>{{trProduto.localEntrega}}</b></td>
+        </tr>
+        <tr>
+            <td colspan="2"><b>Garantia do produto e assistência técnica*:</b> </td>
+        </tr>
+    </table>
+    <div style="text-align: center">
+        <br><br><br>
+        <hr size="1" width="50%"></hr>
+        <b>{{trProduto.solicitante}}</b>
+        <b>Requerente <br><br><br> </b>
+
+        <hr size="1" width="50%">
+        <b>{{trProduto.centrodecusto.gestorCC}}</b>
+        <b>Gestor CC <br><br><br></b>
+
+        <hr size="1" width="50%">
+        <b>Samuel Campos da Silva<br></b>
+        <b>Diretor Administrativo Financeiro</b>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-6"><label>Número GLPI:</label><p>{{trProduto.numero}}</p></div>
-            <div class="col-md-6"><label>Solicitante:</label><p>{{trProduto.solicitante}}</p></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-6"><label>Centro de custo:</label><p>{{trProduto.centrodecusto.nome}} - {{trProduto.centrodecusto.nomeCC}}</p></div>
-            <div class="col-md-6"><label>Fonte pagadora:</label><p>{{trProduto.centrodecusto.fontePagadora.nome}}</p></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-6"><label>Convênio/Cliente:</label><p>{{trProduto.centrodecusto.fontePagadora.descricao}}</p></div>
-            <div class="col-md-6"><label>Etapa/Meta/Submeta:</label><p>{{trProduto.etapaMetaSubmeta}}</p></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-6"><label>Natureza do gasto:</label><p>{{trProduto.naturezagasto.codigo}}</p></div>
-            <div class="col-md-6"><label>Gasto específico:</label><p>{{trProduto.gastoespecifico.nome}} - {{trProduto.gastoespecifico.descricao}}</p></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-6"><label>Conta contábil:</label><p>{{trProduto.gastoespecifico.contaContabil}}</p></div>
-            <div class="col-md-6"><label>Conta orçamentária:</label><p>{{trProduto.gastoespecifico.contaOrcamentaria}}</p></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <h5 class="card-title text-center">Dados do produto</h5><hr>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-6"><label>Patrimônio:</label><p>{{trProduto.patrimonio}}</p></div>
-            <div class="col-md-6"><label>Tipo:</label><p>{{trProduto.tipocompra}}</p></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-6"><label>Descrição do produto:</label><p>{{trProduto.descricao}}</p></div>
-            <div class="col-md-6"><label>Justificativa/Objetivo:</label><p>{{trProduto.justificativa}}</p></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-6"><label>Quantidadade:</label><p>{{trProduto.quantidade}}</p></div>
-            <div class="col-md-6"><label>Valor estimado:</label><p>{{trProduto.valorEstimado}}</p></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-6"><label>Local de entrega:</label><p>{{trProduto.localEntrega}}</p></div>
-        </div>
-    </div>
-    <hr>
     <input class="btn btn-success btn-fill btn-wd btn-next pull-left" type="button" value="Voltar" id="btnVoltar" ng-click="closeThisDialog()"/>
     <input class="btn btn-success btn-fill btn-wd btn-next pull-right" type="button" value="Criar PDF" id="btnImprimir" ng-click="criaPDF()"/>
     <div class="clearfix"></div>

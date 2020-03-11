@@ -13,8 +13,7 @@ angular.module('agil')
             "\n" +
             "- Possíveis aplicações.\n" +
             "Exemplo: Aquisição de Válvula (Esta peça será usada para fazer a ligação da tubulação XXX sendo necessária para XXXX)\n" +
-            "\n" +
-            "- Patrimônio(No caso de substituição ou conserto).\n";
+            "\n";
 
         $scope.fontePagadora = "";
         $scope.gestorCC = "";
@@ -155,7 +154,7 @@ angular.module('agil')
             "                        <td colspan=\"2\">Justificativa de contratação direta:<br><p>" + $scope.trProduto.justificativaDireta + "</p></td>\n" +
             "                    </tr>\n" +
             "                    <tr>\n" +
-            "                        <td>Quantidadade: <b>" + $scope.trProduto.quantidade + "</b></td>\n" +
+            "                        <td>Quantidadade total: <b>" + $scope.trProduto.quantidade + "</b></td>\n" +
             "                        <td>Valor estimado: <b>" + $scope.trProduto.valorEstimado + "</b></td>\n" +
             "                    </tr>\n" +
             "                    <tr>\n" +
