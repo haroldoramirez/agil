@@ -169,10 +169,6 @@
                 </fieldset>
                 <fieldset>
                     <div class="form-group" >
-                        <div class="col-md-2 control-label"> <label class="rotulo">Quantidade total</label> </div>
-                        <div class="col-sm-4">
-                            <input class="form-control" type="number" placeholder="0" ng-model="trProduto.quantidade" ng-required="true">
-                        </div>
                         <div class="col-md-2 control-label"><label class="rotulo">Valor estimado total</label> </div>
                         <div class="col-sm-4">
                             <input class="form-control" type="number" placeholder="R$" ng-model="trProduto.valorEstimado" ng-required="true">
@@ -258,7 +254,6 @@
             <td colspan="2">Justificativa de contratação direta:<br><p>{{trProduto.justificativaDireta}}</p></td>
         </tr>
         <tr>
-            <td>Quantidadade: <b>{{trProduto.quantidade}}</b></td>
             <td>Valor estimado: <b>{{trProduto.valorEstimado}}</b></td>
         </tr>
         <tr>

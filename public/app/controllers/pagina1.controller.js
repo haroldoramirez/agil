@@ -154,7 +154,6 @@ angular.module('agil')
             "                        <td colspan=\"2\">Justificativa de contratação direta:<br><p>" + $scope.trProduto.justificativaDireta + "</p></td>\n" +
             "                    </tr>\n" +
             "                    <tr>\n" +
-            "                        <td>Quantidadade total: <b>" + $scope.trProduto.quantidade + "</b></td>\n" +
             "                        <td>Valor estimado: <b>" + $scope.trProduto.valorEstimado + "</b></td>\n" +
             "                    </tr>\n" +
             "                    <tr>\n" +
