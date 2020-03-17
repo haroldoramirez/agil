@@ -7,3 +7,4 @@ project/target
 /logs
 logs
 deploy
+/conf/application.conf
