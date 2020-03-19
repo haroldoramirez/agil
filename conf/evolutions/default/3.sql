@@ -6,7 +6,6 @@ insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_
     values ('ME015','11112','Mesas e cadeiras para Central de Bioenergia',28,'1203180003','204 MOVEIS E UTENSILIOS', 'now', 'now');
 insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_contabil, conta_orcamentaria, data_cadastro, data_alteracao)
     values ('ME016','11112','Móveis Equipamentos - Outros',28,'1203180003','204 MOVEIS E UTENSILIOS', 'now', 'now');
-
 insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_contabil, conta_orcamentaria, data_cadastro, data_alteracao)
     values ('ME009','11110','Analisador de energia',28,'1203180001','202 MAQUINAS E EQUIPAMENTOS', 'now', 'now');
 insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_contabil, conta_orcamentaria, data_cadastro, data_alteracao)
@@ -19,7 +18,6 @@ insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_
     values ('ME013','11110','Equipamentos para conexão na rede PPS quadro de distribuição SPDA e aterramento sistema de exaustão e demais equipamentos',28,'1203180001','202 MAQUINAS E EQUIPAMENTOS', 'now', 'now');
 insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_contabil, conta_orcamentaria, data_cadastro, data_alteracao)
     values ('ME014','11110','Equipamentos para processar o digestato em biofertilizante composto por sistema de separação de sólidos alimentação granulação secagem transporte resfriamento e embalagem',28,'1203180001','202 MAQUINAS E EQUIPAMENTOS', 'now', 'now');
-
 insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_contabil, conta_orcamentaria, data_cadastro, data_alteracao)
     values ('IN004','11109','Lagoa de estabilização do digestato',27,'1203140009','201 OBRA/INSTALACOES', 'now', 'now');
 insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_contabil, conta_orcamentaria, data_cadastro, data_alteracao)
@@ -56,7 +54,6 @@ insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_
     values ('ME007','11110','Controladores quadros etc',28,'1203180001','202 MAQUINAS E EQUIPAMENTOS', 'now', 'now');
 insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_contabil, conta_orcamentaria, data_cadastro, data_alteracao)
     values ('ME008','11110','Sensores transdutor de pressão e pt100 pressostato chave fim de curso etc',28,'1203180001','202 MAQUINAS E EQUIPAMENTOS', 'now', 'now');
-
 insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_contabil, conta_orcamentaria, data_cadastro, data_alteracao)
     values ('PN001','40401','Deslocamento para reuniões apresentação de artigos e participação de eventos',24,'3102040001','501 DESPESAS COM VIAGENS / DIARIAS NACIONAL', 'now', 'now');
 insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_contabil, conta_orcamentaria, data_cadastro, data_alteracao)
@@ -101,7 +98,6 @@ insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_
     values ('IN002','11109','Reator anaérobio e estrutura complementar',27,'1203140009','201 OBRA/INSTALACOES', 'now', 'now');
 insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_contabil, conta_orcamentaria, data_cadastro, data_alteracao)
     values ('IN003','11109','Armazenamento e transporte',27,'1203140009','201 OBRA/INSTALACOES', 'now', 'now');
-
 insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_contabil, conta_orcamentaria, data_cadastro, data_alteracao)
     values ('ST03','40601','Treinamento das equipes',15,'3102060001','302 SERVICOS DE TERCEIROS PESSOA JURIDICA', 'now', 'now');
 insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_contabil, conta_orcamentaria, data_cadastro, data_alteracao)
@@ -180,7 +176,6 @@ insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_
     values ('MC005','40307','Embalagens para armazenamento insumos para enriquecimento e aglutinação do substrato',23,'3102030007','403 MATERIAL DE CONSUMO', 'now', 'now');
 insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_contabil, conta_orcamentaria, data_cadastro, data_alteracao)
     values ('MC006','40307','Materiais Consumo - Outros',23,'3102030007','403 MATERIAL DE CONSUMO', 'now', 'now');
-
 insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_contabil, conta_orcamentaria, data_cadastro, data_alteracao)
     values ('EI01','11110','Aquisição de equipamentos e sensores para UD ITAIPU devido sua depreciação ao longo da operação da unidade, a exemplo PT100 sensor de vazão de pressão de nível e outros',1,'1203180001','202 MAQUINAS E EQUIPAMENTOS', 'now', 'now');
 insert into gasto_especifico (nome, codigo, descricao, natureza_gasto_id, conta_contabil, conta_orcamentaria, data_cadastro, data_alteracao)
