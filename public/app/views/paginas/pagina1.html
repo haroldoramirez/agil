@@ -9,13 +9,13 @@
                 <h5 class="card-title">Dados da compra</h5> <hr>
                 <fieldset>
                     <div class="form-group">
-                        <div class="col-sm-2 control-label"><label class="rotulo">Número GLPI </label></div>
+                        <div class="col-sm-2 control-label"><label>Número GLPI </label></div>
                         <div class="col-sm-4">
                             <input ng-model="trProduto.numero" name="numero" class="form-control" type="number" placeholder="000000" autocomplete="off" ng-required="true" ng-minlength="5">
                             <span ng-show="formularioDeRegistro.numero.$error.minlength" class="help-block">O campo <strong>Número GLPI</strong> deve ter no mínimo 5 caractéres.</span>
                             <span ng-show="formularioDeRegistro.numero.$error.required && formularioDeRegistro.numero.$dirty" class="help-block"><star>*</star> Por favor, preencha o campo <strong>Número GLPI</strong>.</span>
                         </div>
-                        <div class="col-sm-2 control-label"><label class="rotulo">Solicitante </label></div>
+                        <div class="col-sm-2 control-label"><label>Solicitante </label></div>
                         <div class="col-sm-4">
                             <input ng-model="trProduto.solicitante" name="solicitante" class="form-control" type="text" placeholder="Nome completo" ng-required="true" ng-minlength="6">
                             <span ng-show="formularioDeRegistro.solicitante.$error.minlength" class="help-block">O campo <strong>Solicitante</strong> deve ter no mínimo 6 letras.</span>
@@ -26,9 +26,9 @@
 
                 <fieldset>
                     <div class="form-group">
-                        <div class="col-sm-2 control-label"><label class="rotulo"></label></div>
+                        <div class="col-sm-2 control-label"><label></label></div>
                         <div class="col-sm-4"></div>
-                        <div class="col-sm-2 control-label"><label class="rotulo"></label></div>
+                        <div class="col-sm-2 control-label"><label></label></div>
                         <div class="col-sm-4">
                             <div class="checkbox">
                                 <input id="checkbox1" type="checkbox">
@@ -42,7 +42,7 @@
 
                 <fieldset>
                     <div class="form-group">
-                        <div class="col-sm-2 control-label"><label class="rotulo">Centro de Custo</label></div>
+                        <div class="col-sm-2 control-label"><label>Centro de Custo</label></div>
                         <div class="col-sm-4">
                             <!--concatenar idCentroDeCusto + NomeCC-->
                             <select class="form-control"
@@ -54,7 +54,7 @@
                                 <option value="">Selecione</option>
                             </select>
                         </div>
-                        <div class="col-sm-2 control-label"><label class="rotulo">Fonte Pagadora</label> </div>
+                        <div class="col-sm-2 control-label"><label>Fonte Pagadora</label> </div>
                         <div class="col-sm-4">
                             <input ng-model="fontePagadora" id="idFontePagadora" class="form-control" type="text" readonly>
                         </div>
@@ -63,7 +63,7 @@
 
                 <fieldset>
                     <div class="form-group">
-                        <div class="col-sm-2 control-label"><label class="rotulo">Natureza do gasto</label></div>
+                        <div class="col-sm-2 control-label"><label>Natureza do gasto</label></div>
                         <!-- puxar descrição da natureza-->
                         <div class="col-sm-4">
                             <select ng-disabled="!trProduto.centrodecusto" ng-change="changeNaturezaDeGasto()"
@@ -75,7 +75,7 @@
                                 <option value="">Selecione</option>
                             </select>
                         </div>
-                        <div class="col-sm-2 control-label"><label class="rotulo">Gasto Específico</label> </div>
+                        <div class="col-sm-2 control-label"><label>Gasto Específico</label> </div>
                         <!-- puxar Nome + Descrição -->
                         <div class="col-sm-4">
                             <select ng-disabled="!trProduto.naturezagasto" class="form-control"
@@ -91,12 +91,12 @@
 
                 <fieldset>
                     <div class="form-group">
-                        <div class="col-sm-2 control-label"><label class="rotulo">Gestor do CC</label> </div>
+                        <div class="col-sm-2 control-label"><label>Gestor do CC</label> </div>
                         <div class="col-sm-4">
                             <input ng-model="gestorCC" class="form-control" id="gestor" readonly>
                         </div>
 
-                        <div class="col-sm-2 control-label"> <label class="rotulo">Diretor da área </label> </div>
+                        <div class="col-sm-2 control-label"> <label>Diretor da área </label> </div>
                         <div class="col-sm-4">
                             <input class="form-control" ng-model="trProduto.diretorDaArea" type="text" name="diretorDaArea" ng-minlength="6" ng-required="true" placeholder="Nome completo">
                             <span ng-show="formularioDeRegistro.diretorDaArea.$error.minlength" class="help-block">O campo <strong>Diretor</strong> deve ter no mínimo 6 letras.</span>
@@ -107,7 +107,7 @@
 
                 <fieldset>
                     <div class="form-group">
-                        <div class="col-sm-2 control-label"><label class="rotulo">Etapa/Meta/Submeta</label></div>
+                        <div class="col-sm-2 control-label"><label>Etapa / Meta / Submeta</label></div>
                         <div class="col-sm-10">
                             <input class="form-control" name="etapaMetaSubmeta" ng-model="trProduto.etapaMetaSubmeta" placeholder="Etapa 1 da meta 2 e submeta 2.4" ng-minlength="3">
                             <span ng-show="true" class="help-block"><star>*</star> O campo <strong>Etapa</strong> deve ser preenchido com "N/A" caso seja vazio</span>
@@ -119,7 +119,7 @@
 
                 <fieldset>
                     <div class="form-group">
-                        <div class="col-sm-2 control-label"><label class="rotulo">Patrimônio</label></div>
+                        <div class="col-sm-2 control-label"><label>Patrimônio</label></div>
                         <div class="col-sm-4">
                             <input class="form-control" id="patrimonio" ng-model="trProduto.patrimonio" type="text" placeholder="Insira o patrimônio" ng-minlength="3">
                         </div>
@@ -154,7 +154,7 @@
                     </div>
                 </fieldset>
                     <div class="form-group">
-                        <div class="col-md-2 control-label"><label class="rotulo-textarea">Descrição do produto/Quantidade e Unidade de medida</label> </div>
+                        <div class="col-md-2 control-label"><label>Descrição do produto / Quantidade e Unidade de medida</label> </div>
                         <div class="col-md-10">
                             <textarea class="form-control" name="descricao_produto" rows="20" ng-model="trProduto.descricao" ng-required="true">
                             </textarea>
@@ -166,7 +166,7 @@
                 <fieldset>
                     <div class="form-group">
                         <div>
-                            <div class="col-md-2 control-label"><label class="rotulo">Justificativa/Objetivo</label> </div>
+                            <div class="col-md-2 control-label"><label>Justificativa / Objetivo</label> </div>
                         </div>
                         <div class="col-md-10">
                             <textarea class="form-control" rows="5" placeholder="Justificativa" ng-model="trProduto.justificativa" name="justificativa" ng-required="true"></textarea>
@@ -176,7 +176,7 @@
 
                 <fieldset>
                     <div class="form-group">
-                        <div class="col-md-2 control-label"><label class="rotulo-textarea">Justificativa de compra/Contratação direta</label> </div>
+                        <div class="col-md-2 control-label"><label>Justificativa de compra / Contratação direta</label> </div>
                         <div class="col-md-10">
                             <textarea class="form-control" rows="10" placeholder="Justificativa de compra direta" ng-model="trProduto.justificativaDireta"></textarea>
                             <span ng-show="true" class="help-block"><star>*</star> O campo deve ser preenchido com "N/A" caso seja vazio</span>
@@ -185,7 +185,7 @@
                 </fieldset>
                 <fieldset>
                     <div class="form-group" >
-                        <div class="col-md-2 control-label"><label class="rotulo">Valor estimado total</label> </div>
+                        <div class="col-md-2 control-label"><label>Valor estimado total</label> </div>
                         <div class="col-sm-4">
                             <input class="form-control" type="number" placeholder="R$" ng-model="trProduto.valorEstimado" ng-required="true">
                         </div>
@@ -193,7 +193,7 @@
                 </fieldset>
                 <fieldset>
                     <div class="form-group">
-                        <div class="col-md-2 control-label"><label class="rotulo">Local de entrega</label> </div>
+                        <div class="col-md-2 control-label"><label>Local de entrega</label> </div>
                         <div class="col-sm-10">
                             <input class="form-control" name="local_entrega" placeholder="Exemplo: Sala 105" ng-model="trProduto.localEntrega" ng-required="true">
                             <span ng-show="true" class="help-block"><star>*</star> Fornecer endereço completo</span>
